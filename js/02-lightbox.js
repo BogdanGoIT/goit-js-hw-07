@@ -5,18 +5,6 @@ console.log(galleryItems);
 
 const galleryEl = document.querySelector('.gallery');
 
-galleryEl.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.nodeName !== 'IMG') {
-        return;
-    }
-
-    const imageAlt = e.target.alt;
-    // console.log(e.target)
-    var lightbox = new SimpleLightbox('.gallery a ', { captionDelay: 250, });
-    
-});
-
 function galleryItem(galleryItems) {
     
     return galleryItems.map(({ description, original, preview }) => {
@@ -32,7 +20,7 @@ const listPictures = galleryItem(galleryItems);
 
 galleryEl.innerHTML = listPictures;
 
-
+var lightbox = new SimpleLightbox('.gallery a ', { captionDelay: 250, });
 
 
 
